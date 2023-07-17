@@ -1,5 +1,0 @@
-{
-  <#if name??>"name": "${name}", </#if>
-  "trips": 250,
-  "airline": 5
-}
