@@ -10,6 +10,7 @@ import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
 
+
 @Endpoint(url = "${base_url}/passenger/5ef4a412aab3841847750ce8", methodType = HttpMethodType.DELETE)
 @RequestTemplatePath(path = "api/airlines/_deletePassenger/rq.json")
 @ResponseTemplatePath(path = "api/airlines/_deletePassenger/rs.json")
