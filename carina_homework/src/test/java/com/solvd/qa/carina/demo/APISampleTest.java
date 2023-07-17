@@ -86,7 +86,6 @@ public class APISampleTest implements IAbstractTest {
         getAirlineMethod.validateResponseAgainstSchema("api/airlines/_getAirlines/rs.schema");
     }
 
-
     @Test()
     @MethodOwner(owner = "qpsdemo")
     @TestPriority(Priority.P1)
