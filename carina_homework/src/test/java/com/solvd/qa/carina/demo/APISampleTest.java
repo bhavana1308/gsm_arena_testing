@@ -78,7 +78,7 @@ public class APISampleTest implements IAbstractTest {
     }
 
     @Test()
-    @MethodOwner(owner = "qpsdemo")
+    @MethodOwner(owner = "Bhavana")
     public void testGetAirlines() {
         GetAirlineMethod getAirlineMethod = new GetAirlineMethod();
         getAirlineMethod.callAPIExpectSuccess();
@@ -87,7 +87,7 @@ public class APISampleTest implements IAbstractTest {
     }
 
     @Test()
-    @MethodOwner(owner = "qpsdemo")
+    @MethodOwner(owner = "Bhavana")
     @TestPriority(Priority.P1)
     public void testDeletePassenger() {
         DeletePassengerMethod deletePassengerMethod = new DeletePassengerMethod();
@@ -97,7 +97,7 @@ public class APISampleTest implements IAbstractTest {
     }
 
     @Test()
-    @MethodOwner(owner = "qpsdemo")
+    @MethodOwner(owner = "Bhavana")
     public void testCreatePassenger() {
         LOGGER.info("test");
         PostPassengerMethod api = new PostPassengerMethod();
