@@ -1,12 +1,12 @@
 package com.solvd.qa.carina.demo.gui.pages.common;
 
+import com.solvd.qa.carina.demo.gui.components.footer.FooterMenuBase;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
+import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
+import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-
-import com.solvd.qa.carina.demo.gui.components.footer.FooterMenuBase;
-import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
-import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import com.zebrunner.carina.webdriver.gui.AbstractPage;
 
 public abstract class HomePageBase extends AbstractPage {
 
@@ -21,6 +21,8 @@ public abstract class HomePageBase extends AbstractPage {
     public abstract BrandModelsPageBase selectBrand(String brandName);
 
     public abstract FooterMenuBase getFooterMenu();
+
+    public abstract HeaderMenuBase getHeaderMenu();
 
     public abstract CompareModelsPageBase openComparePage();
 

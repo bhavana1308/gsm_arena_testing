@@ -1,6 +1,5 @@
 package com.solvd.qa.carina.demo;
 
-import com.solvd.qa.carina.demo.gui.components.header.HeaderMenu;
 import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
 import com.solvd.qa.carina.demo.gui.components.header.LogInPopUp;
 import com.solvd.qa.carina.demo.gui.pages.common.HomePageBase;
@@ -22,10 +21,9 @@ public class WebLoginTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        //Open login popup
-        HeaderMenuBase headerMenu = new HeaderMenu(getDriver());
-        headerMenu.openLoginPopUp();
-        LogInPopUp logInPopUp = new LogInPopUp(getDriver());
+        //Open login popup from header
+        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
+        LogInPopUp logInPopUp = headerMenu.openLoginPopUp();
         Assert.assertTrue(logInPopUp.isLoginPopUpPresent(), "login pop up not present");
         //send keys to fields
         logInPopUp.sendKeysToEmailField(email);

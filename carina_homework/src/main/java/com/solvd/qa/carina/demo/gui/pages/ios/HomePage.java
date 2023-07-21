@@ -2,6 +2,7 @@ package com.solvd.qa.carina.demo.gui.pages.ios;
 
 import java.util.List;
 
+import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -57,6 +58,11 @@ public class HomePage extends HomePageBase {
     @Override
     public MobileFooterMenu getFooterMenu() {
         return footer;
+    }
+
+    @Override
+    public HeaderMenuBase getHeaderMenu() {
+        return null;
     }
 
     @Override

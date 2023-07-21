@@ -1,21 +1,22 @@
 package com.solvd.qa.carina.demo.gui.pages.desktop;
 
-import java.lang.invoke.MethodHandles;
-import java.util.List;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.solvd.qa.carina.demo.gui.components.footer.FooterMenu;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderMenu;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
 import com.solvd.qa.carina.demo.gui.pages.common.AllBrandsPageBase;
 import com.solvd.qa.carina.demo.gui.pages.common.BrandModelsPageBase;
 import com.solvd.qa.carina.demo.gui.pages.common.CompareModelsPageBase;
 import com.solvd.qa.carina.demo.gui.pages.common.HomePageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.lang.invoke.MethodHandles;
+import java.util.List;
 
 @DeviceType(pageType = DeviceType.Type.DESKTOP, parentClass = HomePageBase.class)
 public class HomePage extends HomePageBase {
@@ -25,10 +26,13 @@ public class HomePage extends HomePageBase {
     @FindBy(id = "footmenu")
     private FooterMenu footerMenu;
 
+    @FindBy(id = "header")
+    private HeaderMenu headerMenu;
+
     @FindBy(xpath = "//div[contains(@class, 'brandmenu-v2')]//a")
     private List<ExtendedWebElement> brandLinks;
 
-    @FindBys({ @FindBy(xpath = "//p[contains(@class, 'pad')]"), @FindBy(xpath = ".//*[contains(@class, 'pad-single')]") })
+    @FindBys({@FindBy(xpath = "//p[contains(@class, 'pad')]"), @FindBy(xpath = ".//*[contains(@class, 'pad-single')]")})
     private ExtendedWebElement phoneFinderButton;
 
     @FindBy(className = "news-column-index")
@@ -45,6 +49,11 @@ public class HomePage extends HomePageBase {
     @Override
     public FooterMenu getFooterMenu() {
         return footerMenu;
+    }
+
+    @Override
+    public HeaderMenuBase getHeaderMenu() {
+        return headerMenu;
     }
 
     @Override
@@ -70,7 +79,7 @@ public class HomePage extends HomePageBase {
         return phoneFinderButton;
     }
 
-    public AllBrandsPageBase openAllBrandsPage(){
+    public AllBrandsPageBase openAllBrandsPage() {
         allBrandsButton.click();
         return initPage(driver, AllBrandsPageBase.class);
     }
