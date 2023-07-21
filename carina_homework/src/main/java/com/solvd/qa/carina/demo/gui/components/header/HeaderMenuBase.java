@@ -12,5 +12,5 @@ public abstract class HeaderMenuBase extends AbstractUIObject {
 
     public abstract HomePageBase openHomePage();
 
-    public abstract Login openLoginPopUp();
+    public abstract LogInPopUp openLoginPopUp();
 }

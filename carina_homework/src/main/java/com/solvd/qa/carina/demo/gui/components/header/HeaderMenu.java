@@ -25,9 +25,9 @@ public class HeaderMenu extends HeaderMenuBase {
     }
 
     @Override
-    public Login openLoginPopUp() {
+    public LogInPopUp openLoginPopUp() {
         logInIcon.hover();
         logInIcon.click();
-        return new Login(driver);
+        return new LogInPopUp(driver);
     }
 }

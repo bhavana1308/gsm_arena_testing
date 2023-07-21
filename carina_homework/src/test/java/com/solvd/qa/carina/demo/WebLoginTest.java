@@ -2,8 +2,10 @@ package com.solvd.qa.carina.demo;
 
 import com.solvd.qa.carina.demo.gui.components.header.HeaderMenu;
 import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
-import com.solvd.qa.carina.demo.gui.components.header.Login;
+import com.solvd.qa.carina.demo.gui.components.header.LogInPopUp;
 import com.solvd.qa.carina.demo.gui.pages.common.HomePageBase;
+import com.solvd.qa.carina.demo.gui.pages.common.LoginPageBase;
+import com.solvd.qa.carina.demo.gui.pages.desktop.LoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import org.testng.Assert;
@@ -23,16 +25,23 @@ public class WebLoginTest implements IAbstractTest {
         //Open login popup
         HeaderMenuBase headerMenu = new HeaderMenu(getDriver());
         headerMenu.openLoginPopUp();
-        Login login = new Login(getDriver());
-        Assert.assertTrue(login.isLoginPopUpPresent(), "login pop up not present");
-        login.sendKeysToEmailField(email);
-        login.sendKeysToPasswordField(password);
-        Assert.assertTrue(login.isLoginButtonPresent(), "login Button not present");
-        Assert.assertTrue(login.isForgotPasswordPresent(), "Forgot password is not present");
-        login.clickLogInButton();
+        LogInPopUp logInPopUp = new LogInPopUp(getDriver());
+        Assert.assertTrue(logInPopUp.isLoginPopUpPresent(), "login pop up not present");
+        //send keys to fields
+        logInPopUp.sendKeysToEmailField(email);
+        logInPopUp.sendKeysToPasswordField(password);
+        //validate fields
+        Assert.assertTrue(logInPopUp.isLoginButtonPresent(), "login Button not present");
+        Assert.assertTrue(logInPopUp.isForgotPasswordPresent(), "Forgot password is not present");
+        //click login button
+        logInPopUp.clickLogInButton();
+        //Check for login page opening
+        LoginPageBase loginPage = new LoginPage(getDriver());
+        Assert.assertTrue(loginPage.isPageOpened(), "Login page is not opened");
+        //validate messages from login page
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(login.readLoginMessage(), loginMessage, "login message is not present");
-        softAssert.assertEquals(login.readReasonMessage(), reasonMessage, "Reason message is not present");
+        softAssert.assertEquals(loginPage.readLoginMessage(), loginMessage, "login message is not present");
+        softAssert.assertEquals(loginPage.readReasonMessage(), reasonMessage, "Reason message is not present");
         softAssert.assertAll();
     }
 
