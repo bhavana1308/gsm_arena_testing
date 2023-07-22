@@ -1,4 +1,4 @@
-package com.solvd.qa.carina.demo;
+package com.solvd.qa.carina.demo.WebPracticeTests;
 
 import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
 import com.solvd.qa.carina.demo.gui.components.header.LogInPopUp;
