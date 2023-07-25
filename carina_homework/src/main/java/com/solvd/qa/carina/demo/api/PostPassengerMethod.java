@@ -18,11 +18,4 @@ public class PostPassengerMethod extends AbstractApiMethodV2 {
     public PostPassengerMethod() {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("airline_api_url"));
     }
-
-//    public String createPassenger(String id ) {
-//        PostPassengerMethod api = new PostPassengerMethod();
-//        api.setProperties("api/airlines/passenger.properties");
-//        Response response = api.callAPIExpectSuccess();
-//        return response.jsonPath().getString("id");
-//    }
 }
