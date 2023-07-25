@@ -1,8 +1,8 @@
 package com.solvd.qa.carina.demo.gui.pages.desktop;
 
 import com.solvd.qa.carina.demo.gui.components.footer.FooterMenu;
-import com.solvd.qa.carina.demo.gui.components.header.HeaderMenu;
-import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
+import com.solvd.qa.carina.demo.gui.components.header.Header;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderBase;
 import com.solvd.qa.carina.demo.gui.pages.common.AllBrandsPageBase;
 import com.solvd.qa.carina.demo.gui.pages.common.BrandModelsPageBase;
 import com.solvd.qa.carina.demo.gui.pages.common.CompareModelsPageBase;
@@ -27,7 +27,7 @@ public class HomePage extends HomePageBase {
     private FooterMenu footerMenu;
 
     @FindBy(id = "header")
-    private HeaderMenu headerMenu;
+    private Header header;
 
     @FindBy(xpath = "//div[contains(@class, 'brandmenu-v2')]//a")
     private List<ExtendedWebElement> brandLinks;
@@ -52,8 +52,8 @@ public class HomePage extends HomePageBase {
     }
 
     @Override
-    public HeaderMenuBase getHeaderMenu() {
-        return headerMenu;
+    public HeaderBase getHeader() {
+        return header;
     }
 
     @Override

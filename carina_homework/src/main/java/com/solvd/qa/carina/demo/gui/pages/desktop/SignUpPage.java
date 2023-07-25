@@ -38,7 +38,7 @@ public class SignUpPage extends AbstractPage {
         nickName.type(text);
     }
 
-    public void sendKeysToemail(String text) {
+    public void sendKeysToEmail(String text) {
         emailForSignUp.click();
         emailForSignUp.type(text);
     }

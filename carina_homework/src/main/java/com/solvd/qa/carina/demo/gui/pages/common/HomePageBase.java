@@ -1,7 +1,7 @@
 package com.solvd.qa.carina.demo.gui.pages.common;
 
 import com.solvd.qa.carina.demo.gui.components.footer.FooterMenuBase;
-import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderBase;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
@@ -22,7 +22,7 @@ public abstract class HomePageBase extends AbstractPage {
 
     public abstract FooterMenuBase getFooterMenu();
 
-    public abstract HeaderMenuBase getHeaderMenu();
+    public abstract HeaderBase getHeader();
 
     public abstract CompareModelsPageBase openComparePage();
 

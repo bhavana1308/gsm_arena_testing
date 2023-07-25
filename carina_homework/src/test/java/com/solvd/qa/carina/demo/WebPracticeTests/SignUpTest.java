@@ -1,6 +1,6 @@
 package com.solvd.qa.carina.demo.WebPracticeTests;
 
-import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderBase;
 import com.solvd.qa.carina.demo.gui.pages.common.HomePageBase;
 import com.solvd.qa.carina.demo.gui.pages.desktop.SignUpPage;
 import com.zebrunner.carina.core.IAbstractTest;
@@ -19,11 +19,11 @@ public class SignUpTest implements IAbstractTest {
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
 
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        SignUpPage signUpPage = headerMenu.clickSignupButton();
+        HeaderBase header = homePage.getHeader();
+        SignUpPage signUpPage = header.clickSignupButton();
         Assert.assertTrue(signUpPage.isPageOpened(), "Sign up page not opened");
         signUpPage.sendKeysToNickName(StringGenerator.generateWord(6));
-        signUpPage.sendKeysToemail(StringGenerator.generateEmail());
+        signUpPage.sendKeysToEmail(StringGenerator.generateEmail());
         signUpPage.sendKeysToPassword(StringGenerator.generateWord(8));
         signUpPage.clickCheckBox1();
         signUpPage.clickCheckBox2();

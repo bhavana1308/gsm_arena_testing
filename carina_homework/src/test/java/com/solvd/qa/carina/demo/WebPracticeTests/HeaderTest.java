@@ -1,7 +1,7 @@
 package com.solvd.qa.carina.demo.WebPracticeTests;
 
-import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
-import com.solvd.qa.carina.demo.gui.components.header.MainMenu;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderBase;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderMenu;
 import com.solvd.qa.carina.demo.gui.pages.common.HomePageBase;
 import com.solvd.qa.carina.demo.gui.pages.desktop.*;
 import com.zebrunner.carina.core.IAbstractTest;
@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 
-public class MainMenuTest implements IAbstractTest {
+public class HeaderTest implements IAbstractTest {
 
     @Test
     @MethodOwner(owner = "Bhavana")
@@ -21,9 +21,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        NewsPage newsPage = mainMenu.openNews();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        NewsPage newsPage = headerMenu.openNews();
         Assert.assertTrue(newsPage.isPageOpened(), "News page is not opened");
     }
 
@@ -33,9 +33,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        ReviewsPage reviewsPage = mainMenu.openReviews();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        ReviewsPage reviewsPage = headerMenu.openReviews();
         Assert.assertTrue(reviewsPage.isPageOpened(), "Reviews page is not opened");
     }
 
@@ -45,9 +45,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        VideosPage videosPage = mainMenu.openVideos();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        VideosPage videosPage = headerMenu.openVideos();
         Assert.assertTrue(videosPage.isPageOpened(), "Videos page is not opened");
     }
 
@@ -57,9 +57,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        FeaturedPage featuredPage = mainMenu.openFeatured();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        FeaturedPage featuredPage = headerMenu.openFeatured();
         Assert.assertTrue(featuredPage.isPageOpened(), "Featured page is not opened");
     }
 
@@ -69,9 +69,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        PhoneFinderPage phoneFinderPage = mainMenu.openPhoneFinder();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        PhoneFinderPage phoneFinderPage = headerMenu.openPhoneFinder();
         Assert.assertTrue(phoneFinderPage.isPageOpened(), "Phone finder page is not opened");
     }
 
@@ -81,9 +81,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        DealsPage dealsPage = mainMenu.openDeals();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        DealsPage dealsPage = headerMenu.openDeals();
         Assert.assertTrue(dealsPage.isPageOpened(), "deals page is not opened");
     }
 
@@ -93,9 +93,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        MerchPage merchPage = mainMenu.openMerch();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        MerchPage merchPage = headerMenu.openMerch();
         Set<String> windowHandles = getDriver().getWindowHandles();//2
         Iterator<String> it = windowHandles.iterator();
         while (it.hasNext()) {
@@ -110,9 +110,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        CoveragePage coveragePage = mainMenu.openCoverage();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        CoveragePage coveragePage = headerMenu.openCoverage();
         Assert.assertTrue(coveragePage.isPageOpened(), "coverage page is not opened");
     }
 
@@ -122,9 +122,9 @@ public class MainMenuTest implements IAbstractTest {
         HomePageBase homePage = initPage(getDriver(), HomePageBase.class);
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
-        HeaderMenuBase headerMenu = homePage.getHeaderMenu();
-        MainMenu mainMenu = headerMenu.openMainMenu();
-        ContactPage contactPage = mainMenu.openContact();
+        HeaderBase header = homePage.getHeader();
+        HeaderMenu headerMenu = header.openHeaderMenu();
+        ContactPage contactPage = headerMenu.openContact();
         Assert.assertTrue(contactPage.isPageOpened(), "contact page is not opened");
     }
 }

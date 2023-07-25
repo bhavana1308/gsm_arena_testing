@@ -1,18 +1,17 @@
 package com.solvd.qa.carina.demo.gui.pages.ios;
 
-import java.util.List;
-
-import com.solvd.qa.carina.demo.gui.components.header.HeaderMenuBase;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-
 import com.solvd.qa.carina.demo.gui.components.footer.MobileFooterMenu;
+import com.solvd.qa.carina.demo.gui.components.header.HeaderBase;
 import com.solvd.qa.carina.demo.gui.pages.common.AllBrandsPageBase;
 import com.solvd.qa.carina.demo.gui.pages.common.BrandModelsPageBase;
 import com.solvd.qa.carina.demo.gui.pages.common.CompareModelsPageBase;
 import com.solvd.qa.carina.demo.gui.pages.common.HomePageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = HomePageBase.class)
 public class HomePage extends HomePageBase {
@@ -61,7 +60,7 @@ public class HomePage extends HomePageBase {
     }
 
     @Override
-    public HeaderMenuBase getHeaderMenu() {
+    public HeaderBase getHeader() {
         return null;
     }
 
