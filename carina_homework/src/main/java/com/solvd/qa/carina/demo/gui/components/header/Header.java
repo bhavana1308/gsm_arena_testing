@@ -15,8 +15,8 @@ public class Header extends HeaderBase {
     @FindBy(id = "login-active")
     private ExtendedWebElement logInIcon;
 
-    @FindBy(css=".lines-button.minus")
-    private ExtendedWebElement mainMenu;
+    @FindBy(css = ".lines-button.minus")
+    private ExtendedWebElement headerMenu;
 
     @FindBy(xpath = "//a[@href='register.php3']/i")
     private ExtendedWebElement signUpButton;
@@ -40,8 +40,8 @@ public class Header extends HeaderBase {
 
     @Override
     public HeaderMenu openHeaderMenu() {
-        mainMenu.hover();
-        mainMenu.click();
+        headerMenu.hover();
+        headerMenu.click();
         return new HeaderMenu(driver);
     }
 
