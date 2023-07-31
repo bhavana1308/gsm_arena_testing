@@ -8,35 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class HeaderMenu extends AbstractUIObject {
 
-    @FindBy(xpath = "//ul[@id='menu']/li[1]/a")
-    public ExtendedWebElement homeInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[2]/a")
-    public ExtendedWebElement newsInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[3]/a")
-    public ExtendedWebElement reviewsInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[4]/a")
-    public ExtendedWebElement videosInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[5]/a")
-    public ExtendedWebElement featuredInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[6]/a")
-    public ExtendedWebElement phoneFinderInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[7]/a")
-    public ExtendedWebElement dealsInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[8]/a")
-    public ExtendedWebElement merchInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[9]/a")
-    public ExtendedWebElement coverageInHeader;
-
-    @FindBy(xpath = "//ul[@id='menu']/li[10]/a")
-    public ExtendedWebElement contactInHeader;
+    @FindBy(xpath = "//li/a[text()='%s']")
+    public ExtendedWebElement menuInHeader;
 
 
     public HeaderMenu(WebDriver driver) {
@@ -44,61 +17,53 @@ public class HeaderMenu extends AbstractUIObject {
     }
 
     public HomePage openHomePage() {
-        homeInHeader.click();
+        menuInHeader.format("Home").click();
         return new HomePage(driver);
     }
 
     public NewsPage openNews() {
-        newsInHeader.hover();
-        newsInHeader.click();
+        menuInHeader.format("News").click();
         return new NewsPage(driver);
     }
 
     public ReviewsPage openReviews() {
-        reviewsInHeader.hover();
-        reviewsInHeader.click();
+        menuInHeader.format("Reviews").click();
         return new ReviewsPage(driver);
     }
 
     public VideosPage openVideos() {
-        videosInHeader.hover();
-        videosInHeader.click();
+        menuInHeader.format("Videos").click();
         return new VideosPage(driver);
     }
 
+
     public FeaturedPage openFeatured() {
-        featuredInHeader.hover();
-        featuredInHeader.click();
+        menuInHeader.format("Featured").click();
         return new FeaturedPage(driver);
     }
 
     public PhoneFinderPage openPhoneFinder() {
-        phoneFinderInHeader.hover();
-        phoneFinderInHeader.click();
+        menuInHeader.format("Phone Finder").click();
         return new PhoneFinderPage(driver);
     }
 
     public MerchPage openMerch() {
-        merchInHeader.hover();
-        merchInHeader.click();
+        menuInHeader.format("Merch").click();
         return new MerchPage(driver);
     }
 
     public DealsPage openDeals() {
-        dealsInHeader.hover();
-        dealsInHeader.click();
+        menuInHeader.format("Deals").click();
         return new DealsPage(driver);
     }
 
     public CoveragePage openCoverage() {
-        coverageInHeader.hover();
-        coverageInHeader.click();
+        menuInHeader.format("Coverage").click();
         return new CoveragePage(driver);
     }
 
     public ContactPage openContact() {
-        contactInHeader.hover();
-        contactInHeader.click();
+        menuInHeader.format("Contact").click();
         return new ContactPage(driver);
     }
 
