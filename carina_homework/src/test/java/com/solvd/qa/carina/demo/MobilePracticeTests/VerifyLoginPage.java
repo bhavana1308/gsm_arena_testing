@@ -10,6 +10,7 @@ import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class VerifyLoginPage implements IAbstractTest, IMobileUtils {
 
@@ -25,14 +26,15 @@ public class VerifyLoginPage implements IAbstractTest, IMobileUtils {
         welcomePage.clickNextBtn();
         Assert.assertFalse(loginPage.isLoginBtnActive(), "Login button is active when it should be disabled");
         //verify name,password,female radio button,male radio button, privacy policy check box fields
-        Assert.assertTrue(loginPage.isNamePresent(), "Name Field is not Present");
-        Assert.assertTrue(loginPage.isPasswordPresent(), "Password field is not present");
-        Assert.assertTrue(loginPage.isFemaleRadioPresent(), "Female Radio Button is not present");
-        Assert.assertTrue(loginPage.isMaleRadioPresent(), "Male Radio Button is not present");
-        Assert.assertTrue(loginPage.isPrivacyPolicyPresent(), "Privacy policy is not present");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(loginPage.isNamePresent(), "Name Field is not Present");
+        softAssert.assertTrue(loginPage.isPasswordPresent(), "Password field is not present");
+        softAssert.assertTrue(loginPage.isFemaleRadioPresent(), "Female Radio Button is not present");
+        softAssert.assertTrue(loginPage.isMaleRadioPresent(), "Male Radio Button is not present");
+        softAssert.assertTrue(loginPage.isPrivacyPolicyPresent(), "Privacy policy is not present");
         //verify male/female and privacy policy isn't checked
-        Assert.assertFalse(loginPage.isMaleRadioSelected(), "Male Radio is selected");
-        Assert.assertFalse(loginPage.isFemaleRadioSelected(), "Female Radio is selected");
+        softAssert.assertFalse(loginPage.isMaleRadioSelected(), "Male Radio is selected");
+        softAssert.assertFalse(loginPage.isFemaleRadioSelected(), "Female Radio is selected");
         Assert.assertFalse(loginPage.isPrivacyPolicyChecked(), "privacy policy is checked");
         //type name, password -> name and password are typed
         loginPage.typeName(username);
@@ -49,5 +51,6 @@ public class VerifyLoginPage implements IAbstractTest, IMobileUtils {
         // , Web View page is opened
         WebViewPageBase webViewPage = loginPage.openWebViewPage();
         Assert.assertTrue(webViewPage.isPageOpened(), "Web View page isn't opened");
+        softAssert.assertAll();
     }
 }
