@@ -1,4 +1,4 @@
-package com.solvd.qa.carina.demo.WebPracticeTests;
+package com.solvd.qa.carina.demo.webPracticeTests;
 
 import com.solvd.qa.carina.demo.gui.components.header.HeaderBase;
 import com.solvd.qa.carina.demo.gui.components.header.HeaderMenu;

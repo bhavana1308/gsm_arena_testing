@@ -1,4 +1,4 @@
-package com.solvd.qa.carina.demo.MobilePracticeTests;
+package com.solvd.qa.carina.demo.mobilePracticeTests;
 
 import com.solvd.qa.carina.demo.mobile.gui.pages.android.LoginPage;
 import com.solvd.qa.carina.demo.mobile.gui.pages.common.WebViewPageBase;
