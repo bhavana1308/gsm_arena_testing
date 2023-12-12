@@ -15,20 +15,20 @@ Before running the tests, ensure that you have the following prerequisites insta
 
  ## Test Cases
 
-### Header Components Test
-Description: Verify the presence and functionality of header components.
-Steps:
+## Header Components Test
+### Description: Verify the presence and functionality of header components.
+### Steps:
 Open the GSM Arena homepage.
 Verify the presence and functionality of the main navigation bar, search bar, and other header components.
-### Login Test
-Description: Test the login functionality.
-Steps:
+## Login Test
+### Description: Test the login functionality.
+## Steps:
 Navigate to the login page.
 Enter valid credentials.
 Verify successful login and redirection to the user dashboard.
-### Sign-up Test
-Description: Test the user registration process.
-Steps:
+## Sign-up Test
+### Description: Test the user registration process.
+### Steps:
 Navigate to the sign-up page.
 Fill in required registration information.
 Verify successful registration and login with the newly created account.
